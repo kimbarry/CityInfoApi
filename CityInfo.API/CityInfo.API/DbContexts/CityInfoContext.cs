@@ -1,6 +1,17 @@
-﻿namespace CityInfo.API.DbContexts
+﻿using CityInfo.API.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace CityInfo.API.DbContexts
 {
-    public class CityInfoContext
+    public class CityInfoContext : DbContext
     {
+        public DbSet<City> Cities { get; set; } = null!;//null forgiving operator
+        public DbSet<PointOfInterest> PointsOfInterest { get; set; } = null!;
+
+        public CityInfoContext(DbContextOptions<CityInfoContext> options) : base(options)
+        {
+
+        }
+        
     }
 }
