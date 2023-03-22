@@ -45,6 +45,7 @@ builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOpti
 
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
